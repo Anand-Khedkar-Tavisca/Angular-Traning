@@ -1,0 +1,74 @@
+<div class="container">
+  <form name="productForm" [formGroup]="newProductForm" (ngSubmit)="save(newProductForm.value)">
+    <div class="form-group">
+      <label>Product Id</label>
+      <input type="text" name="ProductId" formControlName="ProductId" class="form-control">
+      <div class="alert alert-danger" *ngIf="productId.dirty && !productId.valid">
+        <p *ngIf="productId.errors.required">Product Id is required</p>
+        <p *ngIf="productId.errors.minlength">Product Id must be 2 digits minimum</p>
+        <p *ngIf="productId.errors.maxlength">Product Id must be 6 digits maximum</p>
+        <p *ngIf="productId.errors.pattern">Product Id must be positive integer</p>
+        <p *ngIf="productId.errors.noteven">Value must be even number</p>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>Product Name</label>
+      <input type="text" name="ProductName" formControlName="ProductName" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" name="Price" formControlName="Price"  class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select type="text" name="Category" formControlName="Category"  class="form-control">
+        <option *ngFor="let category of cats">{{category}}</option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+      <input type="button" (click)="clear()" class="btn btn-primary" value="New">
+      <input type="submit" class="btn btn-primary" value="Save" [disabled]="!newProductForm.valid">
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  <div>
+    <label>Search</label>
+    <input type="text" name="Search" [(ngModel)]="searchText" class="form-control">
+    <button class="btn btn-primary" (click)="search()">Go</button>
+  </div>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+<mat-menu #menu="matMenu">
+  <input type="radio" value="as"  name="aa">
+  <label for="male">Sort</label><br>
+
+  <input type="radio" value="bs" name="aa" >
+  <label for="male">Reverse</label><br>
+
+</mat-menu>
+  <!-- <input type="radio" id="male" name="sort" value="Sort" (change)="sortChanged('sort')">
+  <label for="male">Sort</label><br>
+  <input type="radio" id="female" name="sort" value="Reverse" (change)="sortChanged('reverse')">
+  <label for="female">Reverse</label><br> -->
+
+  <table class="table table-striped table-bordered table-dark">
+    <thead>
+      <th *ngFor="let h of headers" >{{h}}</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)" >
+        <td *ngFor="let h of headers" >{{prd[h]}}</td>
+        <td><button class="btn btn-danger" (click)="deleteProduct(prd)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
