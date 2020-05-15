@@ -49,7 +49,7 @@ export class CustomersComponent implements OnInit {
       if(!data){
         this.ctm = this.allCtm;
       } else {
-      this.ctm = this.allCtm.filter((v) => (v.CustomerName === data || v.City === data));
+        this.ctm = this.allCtm.filter((v) => (v.CustomerName.toLowerCase() === data.toLowerCase() || v.City.toLowerCase() === data.toLowerCase()));
       }
       console.log(JSON.stringify(this.ctm));
       customerIds = this.ctm.map((v)=> v.CustomerId);
