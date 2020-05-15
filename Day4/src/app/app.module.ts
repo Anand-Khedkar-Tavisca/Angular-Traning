@@ -9,6 +9,8 @@ import { SimpleElementComponent } from './litelementcomponents/app.simple.elemen
 
 // import all LitElements from its path
 import './litelementapp/app.simpleelement.litelement';
+import './litelementapp/app.tableelement.litelement';
+
 import { RadioListComponent } from './directives/app.rediolist.component';
 import { UtilityServiceComponent } from './components/utilityservicecomponent/app.utilityservice.component';
 import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
