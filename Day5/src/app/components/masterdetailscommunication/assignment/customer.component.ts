@@ -6,7 +6,7 @@ import { CommunicationService } from '../../../services/app.coomunication.servic
 @Component({
   selector: 'app-customers-component',
   template: `
-     <table>
+     <table class="table table-striped table-bordered table-dark">
        <thead>
          <tr>
            <th>Customer Id</th>

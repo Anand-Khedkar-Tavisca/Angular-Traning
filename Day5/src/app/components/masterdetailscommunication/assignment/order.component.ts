@@ -6,7 +6,7 @@ import { CommunicationService } from '../../../services/app.coomunication.servic
 @Component({
   selector: 'app-orders-component',
   template: `
-     <table>
+     <table class="table table-striped table-bordered table-dark">
        <thead>
          <tr>
          <th>OrderId</th>
@@ -21,7 +21,7 @@ import { CommunicationService } from '../../../services/app.coomunication.servic
          <tr *ngFor="let o of filteredOrders">
          <td>{{o.OrderId}}</td>
          <td>{{o.OrderName}}</td>
-         <td>{{o.Date}}</td>
+         <td>{{o.Date | date}}</td>
          <td>{{o.CustomerId}}</td>
          <td>{{o.Quantity}}</td>
          <td>{{o.Amount}}</td>
