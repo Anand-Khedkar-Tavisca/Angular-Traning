@@ -1,5 +1,5 @@
 {
-  "name": "myngapp",
+  "name": "assignment",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -12,17 +12,16 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.6",
+    "@angular/cdk": "^9.2.3",
     "@angular/common": "~9.1.6",
     "@angular/compiler": "~9.1.6",
     "@angular/core": "~9.1.6",
     "@angular/forms": "~9.1.6",
+    "@angular/material": "^9.2.3",
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
-    "@webcomponents/custom-elements": "^1.4.1",
     "bootstrap": "^4.4.1",
-    "lit-element": "^2.3.1",
-    "lit-html": "^1.2.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
